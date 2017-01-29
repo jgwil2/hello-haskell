@@ -10,6 +10,11 @@ import Lib
 
 main :: IO ()
 main = do
+    file <- fmap head getArgs >>= readFile
+    putStrLn file
+
+printMessage :: IO()
+printMessage = do
     args <- getArgs
     let message = head args
     let n = read (last args) :: Int
